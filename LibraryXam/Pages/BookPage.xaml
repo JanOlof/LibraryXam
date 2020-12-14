@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryXam.BookPage">
+    <ContentPage.Content>
+        <Frame CornerRadius="10" Padding="0" HasShadow="True" Margin="20" BackgroundColor="{StaticResource Grey}">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="200"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.9*"/>
+                    <ColumnDefinition Width="0.1*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Title}" Grid.Row="0" Grid.Column="0" FontSize="32" FontAttributes="Bold" 
+                    HorizontalTextAlignment="Start" TextColor="{StaticResource Green}" />
+                <ImageButton HorizontalOptions="End" Grid.Row="0" Grid.Column="1" VerticalOptions="Start" HeightRequest="50"
+                    Source="{Binding StarImage}" Clicked="ImageButton_Clicked" BackgroundColor="{StaticResource Grey}" />
+                <Image Source="{Binding ImageLink}"  Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="Center" Margin="10" HeightRequest="500"/>
+                <ScrollView  Grid.Row="2" Grid.ColumnSpan="2">
+                    <Label Text="{Binding Description}" FontSize="Medium" VerticalTextAlignment="End"
+                           LineBreakMode="WordWrap" TextColor="{StaticResource Brown}"/>
+                </ScrollView>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
